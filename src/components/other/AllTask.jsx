@@ -1,59 +1,48 @@
-import React from 'react'
-import TaskList from '../TaskList/TaskList'
-const AllTask = () => {
+import React, { useContext } from 'react'  
+import { AuthContext } from '../../context/AuthProvider' 
+ 
+// this component show all task stats for every employee !!!!! lets go 
+const AllTask = () => { 
+  
+  const [userData, setUserData] = useContext(AuthContext) 
+
   return (
-    <div className='bg-[#1c1c1c] px-10 py-8 mt-10 text-white'>
+    <div className='bg-[#1c1c1c] p-5 rounded mt-5'>  
 
-  <div className='overflow-y-auto h-[400px]'>  {/* Scrollable container with fixed height */}
+      {/* heading row for the task table */}
+      <div className='bg-red-400 mb-2 py-2 px-4 flex justify-between rounded'>  
 
-    {/* Task 1 */}
-    <div className='bg-purple-400 text-black py-4 px-6 rounded-lg shadow-lg mb-6 flex justify-between items-center'>
-      <h2 className='text-xl font-bold'>Tanishq</h2>
-      <h3 className='text-lg'>Create Dashboard UI</h3>
-      <h5 className='text-sm font-semibold'>Status: In Progress</h5>
+        <h2 className='text-lg font-medium w-1/5'>Employee Name</h2>
+        <h3 className='text-lg font-medium w-1/5'>New Task</h3> 
+        <h5 className='text-lg font-medium w-1/5'>Active Task</h5> 
+        <h5 className='text-lg font-medium w-1/5'>Completed</h5> 
+        <h5 className='text-lg font-medium w-1/5'>Failed</h5> 
+
+      </div>  
+
+      {/* data rows based on userData */}
+      <div>  
+        {userData.map(function(elem, idx) {
+          return (
+            <div key={idx} className='border-2 border-emerald-500 mb-2 py-2 px-4 flex justify-between rounded'> 
+
+              <h2 className='text-lg font-medium w-1/5'>{elem.firstName}</h2>  
+ 
+              <h3 className='text-lg font-medium w-1/5 text-blue-400'>{elem.taskCounts.newTask}</h3>   
+
+              <h5 className='text-lg font-medium w-1/5 text-yellow-400'>{elem.taskCounts.active}</h5> 
+              
+              <h5 className='text-lg font-medium w-1/5 text-white'>{elem.taskCounts.completed}</h5> 
+
+              <h5 className='text-lg font-medium w-1/5 text-red-600'>{elem.taskCounts.failed}</h5> 
+
+            </div> 
+          ) 
+        })}
+
+      </div>
     </div>
-
-    {/* Task 2 */}
-    <div className='bg-red-400 text-black py-4 px-6 rounded-lg shadow-lg mb-6 flex justify-between items-center'>
-      <h2 className='text-xl font-bold'>Riya</h2>
-      <h3 className='text-lg'>Fix Login Bug</h3>
-      <h5 className='text-sm font-semibold'>Status: Pending</h5>
-    </div>
-
-    {/* Task 3 */}
-    <div className='bg-green-400 text-black py-4 px-6 rounded-lg shadow-lg mb-6 flex justify-between items-center'>
-      <h2 className='text-xl font-bold'>Aarav</h2>
-      <h3 className='text-lg'>Update API Routes</h3>
-      <h5 className='text-sm font-semibold'>Status: Completed</h5>
-    </div>
-
-    {/* Task 4 */}
-    <div className='bg-blue-400 text-black py-4 px-6 rounded-lg shadow-lg mb-6 flex justify-between items-center'>
-      <h2 className='text-xl font-bold'>Meera</h2>
-      <h3 className='text-lg'>Design Landing Page</h3>
-      <h5 className='text-sm font-semibold'>Status: On Hold</h5>
-    </div>
-
-    {/* You can add more tasks below as needed */}
-    {/* Task 5 */}
-    <div className='bg-pink-400 text-black py-4 px-6 rounded-lg shadow-lg mb-6 flex justify-between items-center'>
-      <h2 className='text-xl font-bold'>Liam</h2>
-      <h3 className='text-lg'>Build Admin Panel</h3>
-      <h5 className='text-sm font-semibold'>Status: In Progress</h5>
-    </div>
-
-    {/* Task 6 */}
-    <div className='bg-yellow-400 text-black py-4 px-6 rounded-lg shadow-lg mb-6 flex justify-between items-center'>
-      <h2 className='text-xl font-bold'>Ava</h2>
-      <h3 className='text-lg'>Implement Payment Gateway</h3>
-      <h5 className='text-sm font-semibold'>Status: Pending</h5>
-    </div>
-
-  </div>
-
-</div>
-
-  )
-}
-
+  )  
+} 
+ 
 export default AllTask

@@ -2,8 +2,8 @@
 const employees = [
     {
         "id": 1,
-        "firstName": "Arjun",
-        "email": "e@e.com",
+        "firstName": "Tanishq",
+        "email": "Tanishq@gmail.com",
         "password": "123",
         "taskCounts": {
             "active": 2,
@@ -46,8 +46,8 @@ const employees = [
     },
     {
         "id": 2,
-        "firstName": "Sneha",
-        "email": "employee2@example.com",
+        "firstName": "Mrinmay",
+        "email": "Mrinmay@gmail.com",
         "password": "123",
         "taskCounts": {
             "active": 1,
@@ -80,8 +80,8 @@ const employees = [
     },
     {
         "id": 3,
-        "firstName": "Ravi",
-        "email": "employee3@example.com",
+        "firstName": "Tejas",
+        "email": "Tejas@gmail.com",
         "password": "123",
         "taskCounts": {
             "active": 2,
@@ -124,8 +124,8 @@ const employees = [
     },
     {
         "id": 4,
-        "firstName": "Priya",
-        "email": "employee4@example.com",
+        "firstName": "Krashank",
+        "email": "Krashank@gmail.com",
         "password": "123",
         "taskCounts": {
             "active": 2,
@@ -158,8 +158,8 @@ const employees = [
     },
     {
         "id": 5,
-        "firstName": "Karan",
-        "email": "employee5@example.com",
+        "firstName": "Arjun",
+        "email": "Arjun@arjun.com",
         "password": "123",
         "taskCounts": {
             "active": 2,
@@ -205,7 +205,7 @@ const employees = [
 
 const admin = [{
     "id": 1,
-    "email": "admin@example.com",
+    "email": "1",
     "password": "123"
 }];
 

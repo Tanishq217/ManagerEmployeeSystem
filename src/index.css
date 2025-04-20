@@ -2,15 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  color: black;
+*{
+  color: #fff;
 }
-
-body {
-  background-color: white;
+body{
+  background-color: #111;
 }
-
-/* Hides task list scrollbar */
-#tasklist::-webkit-scrollbar {
-  display: none;
+#tasklist::-webkit-scrollbar{
+    background-color: transparent;
+    height: 5px;
+}
+#tasklist::-webkit-scrollbar-thumb{
+  background-color: rgb(143, 143, 143);
+  border-radius: 50px;
 }
